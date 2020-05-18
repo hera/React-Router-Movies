@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = props => {
   const { id, title, director, metascore, stars } = props.movie;
+  const addToSavedList = props.addToSavedList;
+  
 
   return (
     <div className="save-wrapper">
@@ -22,7 +24,7 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={() => addToSavedList(props.movie)}>Save</div>
     </div>
   );
 }

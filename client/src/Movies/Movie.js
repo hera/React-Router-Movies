@@ -3,9 +3,10 @@ import axios from 'axios';
 import { useParams } from "react-router-dom";
 import MovieCard from './MovieCard';
 
-const Movie = () => {
+const Movie = (props) => {
   const [movie, setMovie] = useState();
   const params = useParams();
+  const addToSavedList = props.addToSavedList;
  
   useEffect(() => {
     const id = params.id;
@@ -35,7 +36,7 @@ const Movie = () => {
   }
 
   return (
-    <MovieCard movie={movie} />
+    <MovieCard movie={movie} addToSavedList={addToSavedList} />
   );
 }
 
